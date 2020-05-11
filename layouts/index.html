@@ -6,7 +6,7 @@
 
 	<h1>{{ .Site.Data.personalize.Name }}</h1>
 
-	<h4>{{ .Site.Data.personalize.About| markdownify }}</h4>
+	<p>{{ .Site.Data.personalize.About| markdownify }}</p>
 
 	<table>
 		{{ range .Site.Data.personalize.profiles }}
@@ -26,6 +26,8 @@
 		</tr>
 	</table>
 
+<br/>
+	<hr>
 	<h3>Posts</h3>
 
 	<div>
@@ -38,9 +40,6 @@
 		</div>
 		<br />
 		{{ end }}
-
-
-		<h3><a href="posts/">View all posts</a></h3>
 	</div>
 
 
