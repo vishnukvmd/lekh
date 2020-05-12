@@ -52,7 +52,6 @@ GW.mediaQueries.hover = matchMedia("only screen and (hover: hover) and (pointer:
 GW.mediaQueries.systemDarkModeActive = matchMedia("(prefers-color-scheme: dark)");
 
 GW.modeOptions = [
-    [ 'auto', 'Auto', 'Set light or dark mode automatically, according to system-wide setting' ],
     [ 'light', 'Light', 'Light mode at all times' ],
     [ 'dark', 'Dark', 'Dark mode at all times' ]
 ];
@@ -261,8 +260,7 @@ function injectModeSelector() {
             let selectedMode = event.target.dataset.name;
 
             // Save the new setting.
-            if (selectedMode == "auto") localStorage.removeItem("selected-mode");
-            else localStorage.setItem("selected-mode", selectedMode);
+            localStorage.setItem("selected-mode", selectedMode);
 
             // Actually change the mode.
             setMode(selectedMode);
@@ -398,7 +396,7 @@ function showModeSelector() {
     */
 function updateModeSelectorState() {
     // Get saved mode setting (or default).
-    let currentMode = localStorage.getItem("selected-mode") || 'auto';
+    let currentMode = localStorage.getItem("selected-mode") || 'dark';
 
     // Clear current buttons state.
     let modeSelector = document.querySelector("#mode-selector");
@@ -412,27 +410,16 @@ function updateModeSelectorState() {
         button.classList.add("selected");
         button.disabled = true;
     });
-
-    // Ensure the right button (light or dark) has the â€œcurrently activeâ€
-    // indicator, if the current mode is â€˜autoâ€™.
-    if (currentMode == "auto") {
-        if (GW.mediaQueries.systemDarkModeActive.matches)
-            modeSelector.querySelector(".select-mode-dark").classList.add("active");
-        else
-            modeSelector.querySelector(".select-mode-light").classList.add("active");
-    }
 }
 
-/*  Set specified color mode (auto, light, dark).
+/*  Set specified color mode (light, dark).
     */
 function setMode(modeOption) {
     GWLog("setMode");
 
     // Inject the appropriate styles.
     let modeStyles = document.querySelector("#mode-styles");
-    if (modeOption == 'auto') {
-        modeStyles.innerHTML = `@media (prefers-color-scheme:dark) {${GW.modeStyles}}`;
-    } else if (modeOption == 'dark') {
+    if (modeOption == 'dark') {
         modeStyles.innerHTML = GW.modeStyles;
     } else {
         modeStyles.innerHTML = "";
