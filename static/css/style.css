@@ -6,7 +6,7 @@ body {
   max-width: 40rem;
   padding: 2rem;
   margin: auto;
-  background: #fafafa; 
+  background: #fffdfa; 
   overscroll-behavior-y: none;
 }
 
@@ -14,7 +14,7 @@ img {
   max-width: 100%; }
 
 a {
-  color: #0074D9; }
+  color: #4D7699; }
 
 h1, h2, strong {
   color: #111; }
@@ -37,5 +37,5 @@ h3 {
 
 hr {
   border: 0px;
-  border: 1px solid #eee; 
+  border: 1px solid #eceae6; 
 }
