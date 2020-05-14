@@ -3,20 +3,19 @@
 {{ partial "head.html" . }}
 
 <body>
-  {{ partial "page_header.html" . }}
-
-  <h3>Posts</h3>
-
-  <div>
-
-    <!-- orders content according to the "publishdate" field in front matter -->
-    {{ range .Pages.ByPublishDate.Reverse }}
-    <div class="post-list-item">
-      <a href="{{ .Permalink }}">{{ .Title }}</a><br />
-      <time class="timestamp">{{ .Date.Format "January 2, 2006" }}</time>
+    {{ partial "page_header.html" . }}
+    <h3>Posts</h3>
+    <div>
+        <!-- orders content according to the "publishdate" field in front matter -->
+        {{ range .Pages.ByPublishDate.Reverse }}
+        <div class="post-list-item">
+            <a href="{{ .Permalink }}">{{ .Title }}</a><br />
+            <time class="timestamp">{{ .Date.Format "January 2, 2006" }}</time>
+        </div>
+        {{ end }}
     </div>
-    {{ end }}
-  </div>
+    <script async defer src="https://sa.vishnu.tech/latest.js"></script>
+    <noscript><img src="https://sa.vishnu.tech/noscript.gif" alt=""></noscript>
 </body>
 
 </html>

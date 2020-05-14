@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 {{ partial "head.html" . }}
-
 <html>
-{{ partial "page_header.html" . }}
-<h1>{{ .Title }}</h1>
-<p class="post-meta"><time class="timestamp" itemprop="datePublished">{{ .Date.Format "January 2, 2006" }}</time>
-</p>
-{{ .Content }}
-<br/>
-{{ partial "footer.html" . }}
+
+<body>
+    {{ partial "page_header.html" . }}
+    <h1>{{ .Title }}</h1>
+    <p class="post-meta"><time class="timestamp" itemprop="datePublished">{{ .Date.Format "January 2, 2006" }}</time>
+    </p>
+    {{ .Content }}
+    <br />
+    {{ partial "footer.html" . }}
+    <script async defer src="https://sa.vishnu.tech/latest.js"></script>
+    <noscript><img src="https://sa.vishnu.tech/noscript.gif" alt=""></noscript>
+</body>
 
 </html>

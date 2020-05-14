@@ -3,45 +3,39 @@
 {{ partial "head.html" . }}
 
 <body>
-
-	<h1>{{ .Site.Data.personalize.Name }}</h1>
-
-	<p>{{ .Site.Data.personalize.About| markdownify }}</p>
-
-	<table>
-		{{ range .Site.Data.personalize.profiles }}
-			{{ partial "profile_link.html" . }}
-		{{ end }}
-		<tr>
-			{{ if ne .Site.Data.personalize.Resume "" }}
-			<td><i class="fas fa-file-alt" aria-hidden="true"></i></td>
-			<td>&nbsp;<a href="assets/pdf/{{ .Site.Data.personalize.Resume }}" target="_blank">Resume</a></td>
-			{{ end }}
-		</tr>
-		<tr>
-			{{ if ne .Site.Data.personalize.Email "" }}
-			<td><i class="fas fa-envelope" aria-hidden="true"></i></td>
-			<td>&nbsp;<code>{{ .Site.Data.personalize.Email }}</code></td>
-			{{ end }}
-		</tr>
-	</table>
-
-<br/>
-	<hr>
-	<h3>Posts</h3>
-
-	<div>
-
-		<!-- orders content according to the "publishdate" field in front matter -->
-		{{ range first .Site.Data.personalize.PostLimit .Pages.ByPublishDate.Reverse }}
-		<div class="post-list-item">
-			<a href="{{ .Permalink }}">{{ .Title }}</a><br />
-			<time class="timestamp">{{ .Date.Format "January 2, 2006" }}</time>
-		</div>
-		{{ end }}
-	</div>
-
-
+    <h1>{{ .Site.Data.personalize.Name }}</h1>
+    <p>{{ .Site.Data.personalize.About| markdownify }}</p>
+    <table>
+        {{ range .Site.Data.personalize.profiles }}
+        {{ partial "profile_link.html" . }}
+        {{ end }}
+        <tr>
+            {{ if ne .Site.Data.personalize.Resume "" }}
+            <td><i class="fas fa-file-alt" aria-hidden="true"></i></td>
+            <td>&nbsp;<a href="assets/pdf/{{ .Site.Data.personalize.Resume }}" target="_blank">Resume</a></td>
+            {{ end }}
+        </tr>
+        <tr>
+            {{ if ne .Site.Data.personalize.Email "" }}
+            <td><i class="fas fa-envelope" aria-hidden="true"></i></td>
+            <td>&nbsp;<code>{{ .Site.Data.personalize.Email }}</code></td>
+            {{ end }}
+        </tr>
+    </table>
+    <br />
+    <hr>
+    <h3>Posts</h3>
+    <div>
+        <!-- orders content according to the "publishdate" field in front matter -->
+        {{ range first .Site.Data.personalize.PostLimit .Pages.ByPublishDate.Reverse }}
+        <div class="post-list-item">
+            <a href="{{ .Permalink }}">{{ .Title }}</a><br />
+            <time class="timestamp">{{ .Date.Format "January 2, 2006" }}</time>
+        </div>
+        {{ end }}
+    </div>
+    <script async defer src="https://sa.vishnu.tech/latest.js"></script>
+    <noscript><img src="https://sa.vishnu.tech/noscript.gif" alt=""></noscript>
 </body>
 
 </html>
