@@ -4,7 +4,7 @@
 <html>
 {{ partial "page_header.html" . }}
 <h1>{{ .Title }}</h1>
-<p class="post-meta"><time itemprop="datePublished" style="font-style: italic; font-size: 12px;">{{ .Date.Format "January 2, 2006" }}</time>
+<p class="post-meta"><time class="timestamp" itemprop="datePublished">{{ .Date.Format "January 2, 2006" }}</time>
 </p>
 {{ .Content }}
 <br/>

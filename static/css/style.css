@@ -39,3 +39,12 @@ hr {
   border: 0px;
   border: 1px solid #eceae6; 
 }
+
+.timestamp {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.post-list-item {
+  margin-bottom: 14px;
+}

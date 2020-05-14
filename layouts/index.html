@@ -34,9 +34,9 @@
 
 		<!-- orders content according to the "publishdate" field in front matter -->
 		{{ range first .Site.Data.personalize.PostLimit .Pages.ByPublishDate.Reverse }}
-		<div>
+		<div class="post-list-item">
 			<a href="{{ .Permalink }}">{{ .Title }}</a><br />
-			<time>{{ .Date.Format "January 2, 2006" }}</time>
+			<time class="timestamp">{{ .Date.Format "January 2, 2006" }}</time>
 		</div>
 		<br />
 		{{ end }}

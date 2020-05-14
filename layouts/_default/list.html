@@ -11,9 +11,9 @@
 
     <!-- orders content according to the "publishdate" field in front matter -->
     {{ range .Pages.ByPublishDate.Reverse }}
-    <div style="margin-bottom: 14px;">
+    <div class="post-list-item">
       <a href="{{ .Permalink }}">{{ .Title }}</a><br />
-      <time style="font-style: italic; font-size: 14px;">{{ .Date.Format "January 2, 2006" }}</time>
+      <time class="timestamp">{{ .Date.Format "January 2, 2006" }}</time>
     </div>
     {{ end }}
   </div>
