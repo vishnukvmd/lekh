@@ -8,9 +8,11 @@
     <!-- End stylesheets -->
     <title>{{ .Site.Data.personalize.Name }}</title>
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <script src="/js/dark.js" defer=""></script>
+    {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
     <script async defer src="https://sa.vishnu.tech/latest.js"></script>
     <noscript><img src="https://sa.vishnu.tech/noscript.gif" alt=""></noscript>
 </head>
