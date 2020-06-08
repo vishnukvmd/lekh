@@ -28,10 +28,12 @@
     <div>
         <!-- orders content according to the "publishdate" field in front matter -->
         {{ range first .Site.Data.personalize.PostLimit .Pages.ByPublishDate.Reverse }}
+        {{ if ne .Permalink "https://vishnu.tech/posts/surviving-depression/" }}
         <div class="post-list-item">
             <a href="{{ .Permalink }}">{{ .Title }}</a><br />
             <time class="timestamp">{{ .Date.Format "January 2, 2006" }}</time>
         </div>
+        {{ end }}
         {{ end }}
     </div>
 </body>
