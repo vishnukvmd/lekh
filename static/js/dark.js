@@ -240,7 +240,7 @@ function injectModeSelector() {
     GWLog("injectModeSelector");
 
     // Get saved mode setting (or default).
-    let currentMode = localStorage.getItem("selected-mode") || 'dark';
+    let currentMode = localStorage.getItem("selected-mode") || 'light';
 
     // Inject the mode selector widget and activate buttons.
     let modeSelector = addUIElement(
