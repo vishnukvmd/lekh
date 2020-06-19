@@ -396,7 +396,7 @@ function showModeSelector() {
     */
 function updateModeSelectorState() {
     // Get saved mode setting (or default).
-    let currentMode = localStorage.getItem("selected-mode") || 'dark';
+    let currentMode = localStorage.getItem("selected-mode") || 'light';
 
     // Clear current buttons state.
     let modeSelector = document.querySelector("#mode-selector");
