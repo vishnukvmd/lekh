@@ -77,6 +77,9 @@ GW.modeStyles = `
     video {
         filter: invert(100%);
     }
+    a {
+        filter: invert(90%);
+    }
     #markdownBody, #mode-selector button {
         text-shadow: 0 0 0 #000
     }
