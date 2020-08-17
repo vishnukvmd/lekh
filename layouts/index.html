@@ -4,7 +4,7 @@
 
 <body>
     <h1>{{ .Site.Data.personalize.Name }}</h1>
-    <p>{{ .Site.Data.personalize.About| markdownify }}</p>
+    <p style="margin-top: 28px;">{{ .Site.Data.personalize.About| markdownify }}</p>
     <table>
         {{ range .Site.Data.personalize.profiles }}
         {{ partial "profile_link.html" . }}
