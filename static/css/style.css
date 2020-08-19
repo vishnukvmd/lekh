@@ -23,7 +23,9 @@ h1 {
   font-size: 1.6em; }
 
 h2 {
-  font-size: 1.2em; }
+  font-size: 1.2em; 
+  margin-top: 32px;
+}
 
 h3 {
   font-size: 1.1em; }
