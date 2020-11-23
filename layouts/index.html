@@ -24,16 +24,15 @@
     </table>
     <br />
     <hr>
-    <h3>Posts</h3>
+    <!-- <h3>Posts</h3>
     <div>
-        <!-- orders content according to the "publishdate" field in front matter -->
         {{ range first .Site.Data.personalize.PostLimit .Pages.ByPublishDate.Reverse }}
         <div class="post-list-item">
             <a href="{{ .Permalink }}">{{ .Title }}</a><br />
             <time class="timestamp">{{ .Date.Format "January 2, 2006" }}</time>
         </div>
         {{ end }}
-    </div>
+    </div> -->
 </body>
 
 </html>
