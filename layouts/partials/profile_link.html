@@ -1,6 +1,6 @@
 {{ if and (isset . "url") ( ne .url "") }}
 <tr>
-    <td><i class="fab fa-{{ lower .name }}" aria-hidden="true"></i></td>
+    <td><i class="fab fa-{{ if eq (lower .name) "vishnu.fm" }}soundcloud{{ else }}{{ lower .name }}{{ end }}" aria-hidden="true"></i></td>
     <td>&nbsp;<a href="{{ .url }}" target="_blank" style="font-size: 16px;">{{ .name }}</a></td>
 </tr>
 {{ end }}
